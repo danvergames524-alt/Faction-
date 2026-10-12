@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090b0f">
+  <title>Faction — клановая система</title>
+  <meta name="description" content="Официальный сайт клана Faction">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="Faction, главная">
+      <div class="brand-mark">F<span>×</span></div>
+      <div><strong>FACTION</strong><small>CLAN SYSTEM</small></div>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="#about">О клане</a><a href="#staff">Персонал</a><a href="#news">Новости</a>
+    </nav>
+    <div class="top-actions">
+      <button class="lang-btn" id="langBtn" type="button" title="Сменить язык">RU / UA</button>
+      <a class="button button-small" href="#staff">Наша команда <span>↗</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Открыть меню">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse"></span> ОФИЦИАЛЬНЫЙ САЙТ КЛАНА</div>
+        <h1>Сила — в единстве.<br><span>Имя — в истории.</span></h1>
+        <p class="hero-text">Faction — больше, чем клан. Это система, в которой важны вклад, доверие и люди, готовые двигаться вперёд вместе.</p>
+        <div class="hero-actions">
+          <a class="button" href="#about">Исследовать Faction <span>↗</span></a>
+          <a class="button button-ghost" href="#staff">Познакомиться с командой</a>
+        </div>
+        <div class="hero-foot"><span class="line"></span><span>DISCIPLINE · LOYALTY · DEVELOPMENT</span></div>
+      </div>
+      <div class="hero-art" aria-label="Эмблема Faction">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="crest"><div class="crest-inner"><span class="crest-f">F</span><span class="crest-slash"></span></div></div>
+        <div class="art-label label-top"><span class="tiny-dot"></span> FACTION / EST.</div>
+        <div class="art-label label-bottom">NO WEAK LINKS <span>◆</span></div>
+        <div class="art-corner corner-a"></div><div class="art-corner corner-b"></div>
+      </div>
+      <div class="hero-bottom">
+        <div><span class="mini-label">НАШ ПРИНЦИП</span><strong>Результат важнее шума.</strong></div>
+        <div><span class="mini-label">НАШ ПОДХОД</span><strong>Система вместо хаоса.</strong></div>
+        <div><span class="mini-label">НАША ЦЕЛЬ</span><strong>Расти, не теряя себя.</strong></div>
+      </div>
+    </section>
+
+    <section class="section-wrap about-section" id="about">
+      <div class="section-heading">
+        <div><span class="eyebrow">01 / О КЛАНЕ</span><h2>Не просто тег<br><span>рядом с ником.</span></h2></div>
+        <p>Мы развиваем не только состав, но и внутреннюю инфраструктуру: управление, экономику, активность и возможности для участников.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card feature-main"><div class="feature-icon">◈</div><span class="card-index">01 — STRUCTURE</span><h3>Чёткая система</h3><p>Роли и зоны ответственности помогают принимать решения без лишнего хаоса и бесконечных согласований.</p><div class="card-line"></div></article>
+        <article class="feature-card"><div class="feature-icon">⌁</div><span class="card-index">02 — ECONOMY</span><h3>Внутренняя экономика</h3><p>Фонд, награды и аукционы создают понятную систему вклада и вознаграждения.</p><div class="card-line"></div></article>
+        <article class="feature-card"><div class="feature-icon">⛨</div><span class="card-index">03 — COMMUNITY</span><h3>Команда прежде всего</h3><p>Сильный клан строится на доверии, адекватных правилах и уважении к участникам.</p><div class="card-line"></div></article>
+      </div>
+    </section>
+
+    <section class="staff-section" id="staff">
+      <div class="section-wrap">
+        <div class="section-heading staff-heading">
+          <div><span class="eyebrow">02 / ЛЮДИ FACTION</span><h2>Те, кто держит<br><span>систему в строю.</span></h2></div>
+          <div class="heading-side"><p>За каждым решением стоят люди. Здесь собрана команда, которая отвечает за развитие клана.</p><button class="button button-ghost" id="editToggle" type="button">✎ Редактировать состав</button></div>
+        </div>
+        <div class="edit-panel hidden" id="editPanel">
+          <div class="edit-panel-head"><div><strong>Управление персоналом</strong><small>Изменения сохраняются в этом браузере. Для публикации на сайте нажми «Экспорт данных» и обнови файл data.json вручную либо используй экспорт как резервную копию.</small></div><button class="icon-btn" id="closeEditor" aria-label="Закрыть">×</button></div>
+          <form id="staffForm" class="staff-form">
+            <input type="hidden" id="staffId">
+            <label>Ник<input id="staffName" required maxlength="40" placeholder="Например, Requiem"></label>
+            <label>Должность<input id="staffRole" required maxlength="60" placeholder="Например, Советник"></label>
+            <label>Описание<input id="staffDesc" maxlength="140" placeholder="Кратко о зоне ответственности"></label>
+            <label>Метка<select id="staffTag"><option>РУКОВОДСТВО</option><option>АДМИНИСТРАЦИЯ</option><option>ПЕРСОНАЛ</option><option>ДИПЛОМАТИЯ</option></select></label>
+            <div class="form-actions"><button class="button" type="submit" id="saveStaff">Сохранить участника</button><button class="button button-ghost hidden" type="button" id="cancelEdit">Отмена</button></div>
+          </form>
+          <div class="editor-tools"><button class="button button-ghost button-small" id="exportData" type="button">↓ Экспорт данных JSON</button><label class="button button-ghost button-small import-label">↑ Импорт JSON<input id="importData" type="file" accept=".json,application/json" hidden></label><button class="text-button" id="resetData" type="button">Сбросить изменения</button></div>
+        </div>
+        <div class="staff-grid" id="staffGrid"></div>
+      </div>
+    </section>
+
+    <section class="section-wrap news-section" id="news">
+      <div class="section-heading">
+        <div><span class="eyebrow">03 / ПОСЛЕДНИЕ СОБЫТИЯ</span><h2>Движение не<br><span>останавливается.</span></h2></div>
+        <p>Ключевые обновления и решения Faction. Здесь можно размещать объявления о реформах, событиях и развитии клана.</p>
+      </div>
+      <div class="news-grid" id="newsGrid"></div>
+    </section>
+
+    <section class="join-wrap section-wrap">
+      <div class="join-panel"><div class="join-mark">F<span>×</span></div><div><span class="eyebrow">FACTION / NEXT CHAPTER</span><h2>История продолжается.</h2><p>Сильная система начинается с людей, которые готовы вкладываться в общее дело.</p></div><a class="button" href="#home">Вернуться наверх ↑</a><div class="join-glow"></div></div>
+    </section>
+  </main>
+
+  <footer class="footer section-wrap"><a class="brand footer-brand" href="#home"><div class="brand-mark">F<span>×</span></div><div><strong>FACTION</strong><small>CLAN SYSTEM</small></div></a><span>© <span id="year"></span> FACTION. ВСЕ ПРАВА НА МЕСТЕ.</span><a href="#home" class="back-top">НАВЕРХ ↑</a></footer>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
